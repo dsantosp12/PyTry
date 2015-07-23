@@ -1,0 +1,13 @@
+#invoice-collection > a{
+    color: #000;
+}
+
+@media print{
+    .inv-logo{
+        margin-left: 150px;
+    }
+    nav, #controls{
+        display: none;
+    }
+
+}

@@ -1,0 +1,100 @@
+{% extends 'layout/base.html'%}
+
+{% block contents %}
+    <div class="row">
+        <form method="POST" action="{{ url_for('create_invoice_process') }}" class="col s10 m8 offset-m2 offset-s1">
+            <h4>Create Invoice</h4>
+            <div class="row">
+                <div class="input-field col m6 s12">
+                    <input placeholder="" id="business_name" type="text" class="validate" name="business_name">
+                    <label for="business_name">Business Name</label>
+                </div>
+                <div class="input-field col m3 s6">
+                    <select name="category">
+                        <option value="market_price" selected>Market</option>
+                        <option value="costumer_price">Person</option>
+                        <option value="distributor_price">Distributor</option>
+                    </select>
+                    <label>Category</label>
+                </div>
+                <div class="input-field col m3 s6">
+                    <input placeholder="Date" type="date" class="datepicker" id="date" name="date">
+                    <label for="date">Date</label>
+                </div>
+            </div>
+
+            {% for x in range(1,6) %}
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input placeholder="" id="quantity{{ x }}" name="quantity{{ x }}" type="number" class="validate">
+                        <label>Quantity</label>
+                    </div>
+
+                    <div class="input-field col s9">
+                        <select name="id{{ x }}" id="item{{ x }}">
+                            <option value="" selected>Choose item</option>
+                            {% for item in items %}
+                                <option value="{{ item[0] }}">{{ item[1] }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="item{{ x }}">Description</label>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+            <div class="row">
+                <div class="input-field col m8 s6">
+                    <select name="seller" id="seller">
+                        <option value="" selected>Choose Seller</option>
+                        {% for emp in employees %}
+                            <option value="{{ emp[1] }}">{{ emp[1] }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="seller">Seller</label>
+                </div>
+
+                <div class="col m2 s4">
+                     <!-- Switch -->
+                    <div class="switch">
+                        <label>
+                            Pending
+                            <input type="checkbox" name="pending" value="1">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col m2 s2">
+                    <button class="btn-floating btn-large waves-effect waves-light blue darken-4" type="submit"><i class="material-icons">add</i></button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    {% block script %}
+        <script>
+            $('form').submit(function (evt) {
+                evt.preventDefault();
+
+                var url = $(this).attr("action");
+                var formData = $(this).serialize();
+
+                $.post(url, formData, function(){
+                    new jBox('Notice', {
+                        content: 'Invoice create successfully!'
+                    });
+
+                    $('form').trigger('reset');
+
+                }).fail(function(jqXHR){
+
+                    new jBox('Notice', {
+                        content: 'Invoice was not created. Check the fields.'
+                    });
+                });
+            });
+        </script>
+    {% endblock %}
+
+{% endblock %}

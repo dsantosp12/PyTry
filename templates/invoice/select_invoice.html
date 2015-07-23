@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+
+{% block contents %}
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            {% if invoices %}
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content">
+                            <div class="collection"id="invoice-collection">
+                                {% for invoice in invoices %}
+                                    <a href="{{ url_for('print_invoice') }}?id={{ invoice[0] }}&costumer={{ invoice[1] }}&date={{ invoice[2] }}&seller={{ invoice[3] }}&items={{ invoice[4] }}&total={{ invoice[5] }}&pending={{ invoice[6] }}"
+                                       class="collection-item">{{ invoice[1] }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+            {% else %}
+                <div class="card blue-grey darken-1">
+                    <h2>No invoices available!</h2>
+                    <h3><a href="{{ url_for('create_invoice') }}">Create one</a></h3>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'layout/base.html' %}
+
+{% block contents %}
+    <div class="printable" style="margin-top: 20px;">
+        <div class="row">
+            <div class="col s6 m2 offset-m2">
+                <img class="responsive-img inv-logo" src="/static/img/isotipo-positivo-01.png" style="max-height: 150px;">
+            </div>
+            <div class="col s6 m2">
+                <p>NapCorps, Inc</p>
+                <address>
+                    18 Portland St<br>
+                    Lawrence, MA<br>
+                    01843<br>
+                    978-457-3318
+                </address>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m5 offset-m2">
+                <h5><b>Costumer:</b> {{ costumer }}</h5>
+            </div>
+            <div class="col s12 m2">
+                <h5><b>Date:</b> {{ date }}</h5>
+            </div>
+            <div class="col s6 m2">
+                <h5><b>Pay:</b>
+                    {% if pending == '1' %}
+                        No <i class="material-icons">new_releases</i>
+                    {% endif %}
+                    {% if pending == '0' %}
+                        Yes<i class="material-icons">done</i>
+                    {% endif %}
+                </h5>
+            </div>
+            <div class="col s12 m8 offset-m2">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                            {% if item[0] != '' %}
+                                <tr>
+                                    <td>{{ item[0] }}</td>
+                                    <td>{{ item[1] }}</td>
+                                    <td>${{ item[2] }}</td>
+                                    <td>${{ item[3] }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Sold by: {{ seller }}</th>
+                            <th></th>
+                            <th>Total:</th>
+                            <th>${{ total }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>_________________________________</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="controls">
+        <div class="col s6 m2 offset-m2">
+            <button class="waves-effect waves-light btn black light-4" onclick="window.print()"><i class="material-icons right">print</i>Print</button>
+        </div>
+        <div class="col s6 m2">
+            <button class="waves-effect waves-light btn black light-4" onclick=""><i class="material-icons right">import_export</i>PDF</button>
+        </div>
+        <div class="col s6 m2">
+            <button class="waves-effect waves-light btn black light-4" onclick=""><i class="material-icons right">loop</i>Edit</button>
+        </div>
+        <div class="col s6 m2">
+            <button class="waves-effect waves-light btn black light-4" onclick="window.history.back()"><i class="material-icons right">settings_backup_restore</i>Back</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/jsPDF/jspdf.source.js"></script>
+    <script src="/static/js/jsPDF/jspdf.amd.min.js"></script>
+    <script src="/static/js/jsPDF/jspdf.min.js"></script>
+{% endblock %}
