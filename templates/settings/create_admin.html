@@ -1,0 +1,57 @@
+{% extends 'layout/base.html' %}
+{% block contents %}
+    <div class="container">
+        <div class="row">
+            <h4>Create Administrator</h4>
+            <form method="POST" action="{{ url_for('create_admin') }}">
+
+                <div class="row">
+                    <div class="input-field col m6">
+                        <input placeholder="Full Name" id="name" type="text" name="name" class="validate">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col m6">
+                        <input placeholder="Phone" id="phone" type="tel" name="text" class="validate">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col m6 s6">
+                        <input placeholder="Username" id="username" type="text" name="username" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+
+                    <div class="input-field col m6 s6">
+                        <input placeholder="Password" id="password" type="password" name="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="Street" id="street" type="text" name="street" class="validate">
+                    <label for="street">Street</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="City" id="city" type="text" name="city" class="validate">
+                    <label for="city">City</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="Ex. MA, FL" id="state" type="text" name="state" class="validate">
+                    <label for="state">State</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="Zipcode" id="zipcode" type="text" name="zipcode" class="validate">
+                    <label for="zipcode">Zipcode</label>
+                </div>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        alert('asd');
+    </script>
+{% endblock %}

@@ -2,6 +2,7 @@ __author__ = 'dsantos'
 
 from mysql.connector import Connect, errors
 from datetime import datetime
+from flask.ext.bcrypt import Bcrypt
 
 HOST = '127.0.0.1'
 USER = 'root'
@@ -17,7 +18,7 @@ class Database:
     @staticmethod
     def create_database():
         try:
-            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+            conn = Connect(host=HOST, user=USER, password=PASSWORD)
         except:
             raise ConnectionError
 
@@ -127,9 +128,31 @@ class Database:
         cur = conn.cursor()
 
         query = ("CREATE TABLE IF NOT EXISTS `invoices`(`id` INT(11) NOT NULL AUTO_INCREMENT,"
-                 "`business_info` VARCHAR(255) NOT NULL, `date` DATE NOT NULL, seller VARCHAR(255) NOT NULL,"
-                 "`items` TEXT NOT NULL, `total` DECIMAL(6,2), is_pending BOOLEAN NOT NULL,"
-                 "PRIMARY KEY(`id`));")
+                 "`invoice_id` VARCHAR(255),`costumer` VARCHAR(255) NOT NULL, `date` DATE NOT NULL,"
+                 "seller VARCHAR(255) NOT NULL, `items` TEXT NOT NULL, `total` DECIMAL(6,2),"
+                 "is_pending BOOLEAN NOT NULL, PRIMARY KEY(`id`));")
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+
+        conn.close()
+
+    @staticmethod
+    def create_admin_table():
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except:
+            raise ConnectionError
+
+        cur = conn.cursor()
+
+        query = ("CREATE TABLE IF NOT EXISTS `administrator`(`id` INT(11) NOT NULL AUTO_INCREMENT,"
+                 "`name` VARCHAR(255) NOT NULL, `user_name` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL,"
+                 "`street` VARCHAR(255) NOT NULL, `city` VARCHAR(255) NOT NULL,"
+                 "`state` VARCHAR(255) NOT NULL, `zipcode` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL,"
+                 "`email` VARCHAR(255) NOT NULL, `join_date` DATE NOT NULL, PRIMARY KEY(`id`));")
 
         try:
             cur.execute(query)
@@ -145,6 +168,7 @@ class Database:
         self.create_business_table()
         self.create_invoice_table()
         self.create_employees_table()
+        self.create_admin_table()
 
 
 class Business:
@@ -407,13 +431,14 @@ class Item:
 
 
 class Invoice:
-    def __init__(self, business_info={}, date='', seller='', items='', total=0, is_pending=False):
-        self.info = business_info
+    def __init__(self, costumer={}, date='', seller='', items='', total=0, is_pending=False, invoice_id=''):
+        self.info = costumer
         self.date = date
         self.seller = seller
         self.items = items
         self.total = total
         self.pending = is_pending
+        self.invoice_id = invoice_id
 
     def create_invoice(self):
         try:
@@ -424,9 +449,9 @@ class Invoice:
 
         cur = conn.cursor()
 
-        query = ("INSERT INTO `invoices`(business_info, date, seller, items, total, is_pending)"
-                 "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')"
-                 "".format(self.info, self.date, self.seller, self.items, self.total, self.pending))
+        query = ("INSERT INTO `invoices`(invoice_id, costumer, date, seller, items, total, is_pending)"
+                 "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')"
+                 "".format(self.invoice_id, self.info, self.date, self.seller, self.items, self.total, self.pending))
         try:
             cur.execute(query)
         except errors.ProgrammingError as e:
@@ -485,7 +510,7 @@ class Invoice:
         return response[0][0]
 
     @staticmethod
-    def get_all_invoices():
+    def get_ten_invoices():
         try:
             conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
         except ConnectionError as e:
@@ -494,7 +519,29 @@ class Invoice:
 
         cur = conn.cursor()
 
-        query = ("SELECT * FROM invoices ORDER BY `date` ASC".format(id))
+        query = ("SELECT * FROM invoices ORDER BY `id` DESC LIMIT 15".format(id))
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return None
+
+        response = cur.fetchall()
+
+        conn.close()
+
+        return response
+
+    def get_invoice_by_id(self):
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = ("SELECT * FROM invoices WHERE `id` = {}".format(self.invoice_id))
         try:
             cur.execute(query)
         except errors.ProgrammingError as e:
@@ -508,21 +555,42 @@ class Invoice:
         return response
 
 
+class Admin:
+    def __init__(self, name, email, user_name, password, phone, join_date, address={}):
+        bcrypt = Bcrypt()
+        self.name = name
+        self.email = email
+        self.user_name = user_name
+        self.password = bcrypt.generate_password_hash(password)
+        self.phone = phone
+        self.address = address
+        self.join_date = join_date
+
+    def create_employee(self):
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = ("INSERT INTO "
+                 "`administrator`(name, user_name, password, street, city, state, zipcode, phone, email, join_date)"
+                 "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')"
+                 "".format(self.name, self.user_name, self.password, self.address['street'],
+                           self.address['city'], self.address['state'], self.address['zipcode'],
+                           self.phone, self.email, self.join_date))
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return False
+
+        conn.commit()
+        conn.close()
+
 if __name__ == '__main__':
-    # db = Database()
-    # db.init()
-    # ad = {
-    #     'street': '54 Lawrence St',
-    #     'city': 'Lawrence',
-    #     'state': 'MA',
-    #     'zipcode': '01843',
-    # }
-    # b = Business('Mellos Super Market', '978-457-3318', 'Leonel', 'N/A', ad)
-    # cos = Costumer('Carmen Paulino', '978-457-3318', 'N/A', ad)
-    # emp = Employee('Daniel Santos', '978-457-3318', 'dsantosp12@gmail.com', ad)
-    # item = Item('30 Onz. Supra Cuaba Liquid Soap', 26, 0, 20, 50)
-    # item.add_item()
-    # inv = Invoice(b.business_info(), datetime.now().date(), emp.name, item.description, 120, 1)
-    # inv.create_invoice()
-    inv = Invoice()
-    print(inv.get_item_description_by_id(1, 'market_price'))
+    db = Database()
+    db.init()

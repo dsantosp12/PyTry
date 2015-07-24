@@ -15,15 +15,18 @@
                     978-457-3318
                 </address>
             </div>
+            <div class="col s6 m3 offset-m2">
+                <h5>Invoice #: {{ id }}</h5>
+            </div>
         </div>
         <div class="row">
-            <div class="col s12 m5 offset-m2">
+            <div class="col s12 m4 offset-m2">
                 <h5><b>Costumer:</b> {{ costumer }}</h5>
             </div>
-            <div class="col s12 m2">
+            <div class="col s12 m3">
                 <h5><b>Date:</b> {{ date }}</h5>
             </div>
-            <div class="col s6 m2">
+            <div class="col s6 m3">
                 <h5><b>Pay:</b>
                     {% if pending == '1' %}
                         No <i class="material-icons">new_releases</i>
@@ -57,7 +60,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Sold by: {{ seller }}</th>
+                            <th class="center">Sold by: {{ seller }}</th>
                             <th></th>
                             <th>Total:</th>
                             <th>${{ total }}</th>

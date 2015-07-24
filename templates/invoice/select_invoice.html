@@ -1,26 +1,54 @@
 {% extends 'layout/base.html' %}
 
 {% block contents %}
+    <div class="row container" style="margin-top: 20px;">
+        {% if invoices %}
+            <div class="col s12 m6 offset-m3">
+                <h5>Search:</h5>
+                <form method="GET" action="{{ url_for('search_invoice') }}">
+                    <div class="input-field blue-grey darken-1 search">
+                        <input placeholder="Search by invoice number" type="search" name="invoice_id" required>
+                    </div>
+                </form>
+                {% if request.args.get('nfy') %}
+                    <div class="flash card blue-grey darken-1 offset-m3">
+                        <div class="card-content white-text">
+                            <p class="white-text">Invoice not found.</p>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                    <script>
+                        var  flash = $('.flash');
+                        flash.hide();
+                        flash.slideDown();
+                        flash.fadeToggle(5000);
+                    </script>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
     <div class="row">
         <div class="col s12 m8 offset-m2">
             {% if invoices %}
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content">
-                            <div class="collection"id="invoice-collection">
-                                {% for invoice in invoices %}
-                                    <a href="{{ url_for('print_invoice') }}?id={{ invoice[0] }}&costumer={{ invoice[1] }}&date={{ invoice[2] }}&seller={{ invoice[3] }}&items={{ invoice[4] }}&total={{ invoice[5] }}&pending={{ invoice[6] }}"
-                                       class="collection-item">{{ invoice[1] }}</a>
-                                {% endfor %}
-                            </div>
+                <h5>Latest invoices:</h5>
+                <div class="card blue-grey darken-1">
+                    <div class="card-content">
+                        <div class="collection"id="invoice-collection">
+                            {% for invoice in invoices %}
+                                <a href="{{ url_for('print_invoice') }}?id={{ invoice[0] }}&costumer={{ invoice[1] }}&date={{ invoice[2] }}&seller={{ invoice[3] }}&items={{ invoice[4] }}&total={{ invoice[5] }}&pending={{ invoice[6] }}" class="collection-item">
+                                    {{ invoice[0] }} | {{ invoice[1] }}
+                                </a>
+                            {% endfor %}
                         </div>
                     </div>
+                </div>
+                <p>This are the 10 latest invoices.</p>
             {% else %}
                 <div class="card blue-grey darken-1">
-                    <h2>No invoices available!</h2>
+                    <h2 class="white-text">No invoices available!</h2>
                     <h3><a href="{{ url_for('create_invoice') }}">Create one</a></h3>
                 </div>
             {% endif %}
-
         </div>
     </div>
 {% endblock %}

@@ -6,8 +6,8 @@
             <h4>Create Invoice</h4>
             <div class="row">
                 <div class="input-field col m6 s12">
-                    <input placeholder="" id="business_name" type="text" class="validate" name="business_name">
-                    <label for="business_name">Business Name</label>
+                    <input placeholder="" id="costumer" type="text" class="validate" name="costumer">
+                    <label for="costumer">Costumer</label>
                 </div>
                 <div class="input-field col m3 s6">
                     <select name="category">
@@ -44,7 +44,7 @@
             {% endfor %}
 
             <div class="row">
-                <div class="input-field col m8 s6">
+                <div class="input-field col m4 s8">
                     <select name="seller" id="seller">
                         <option value="" selected>Choose Seller</option>
                         {% for emp in employees %}
@@ -53,7 +53,10 @@
                     </select>
                     <label for="seller">Seller</label>
                 </div>
-
+                <div class="input-field col m2 s4">
+                    <input placeholder="" id="invoice_id" type="text" class="validate" name="invoice_id">
+                    <label for="invoice_id">Invoice #</label>
+                </div>
                 <div class="col m2 s4">
                      <!-- Switch -->
                     <div class="switch">
@@ -65,7 +68,7 @@
                     </div>
                 </div>
                 <div class="col m2 s2">
-                    <button class="btn-floating btn-large waves-effect waves-light blue darken-4" type="submit"><i class="material-icons">add</i></button>
+                    <button class="btn-floating btn-large waves-effect waves-light green darken-3" type="submit"><i class="material-icons">add</i></button>
                 </div>
             </div>
 

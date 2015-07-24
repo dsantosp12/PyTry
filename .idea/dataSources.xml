@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2618496143">
+  <component name="DataSourceManagerImpl" format="xml" hash="323076990">
     <data-source source="LOCAL" name="MySQL - pytry@localhost" uuid="7e68e6ad-c5fe-46b0-b84d-8d5560f2b186">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
