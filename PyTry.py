@@ -1,11 +1,19 @@
 from datetime import datetime
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash, make_response
+from flask.ext.bcrypt import Bcrypt
 
-from models import Item, Costumer, Business, Invoice, Employee
+from mysql.connector import errors
+
+from models import Item, Costumer, Business, Invoice, Employee, Admin
 from tools import prepare_items
 
 app = Flask(__name__)
+
+b = Bcrypt()
+SK = 'F*CM)@_!($":.@!#$E++)_-_;A"S;'
+SK_hash = b.generate_password_hash(SK)
+app.secret_key = SK
 
 
 @app.route('/')
@@ -112,13 +120,13 @@ def search_invoice():
     invoice = inv.get_invoice_by_id()
 
     if invoice:
-        id = invoice[0][0]
-        costumer = invoice[0][1]
-        date = str(datetime.strftime(invoice[0][2], '%Y-%m-%d'))
-        seller = invoice[0][3]
-        items = invoice[0][4]
-        total = invoice[0][5]
-        pending = invoice[0][6]
+        id = invoice[0][1]
+        costumer = invoice[0][2]
+        date = str(datetime.strftime(invoice[0][3], '%Y-%m-%d'))
+        seller = invoice[0][4]
+        items = invoice[0][5]
+        total = invoice[0][6]
+        pending = invoice[0][7]
 
         return redirect(url_for('print_invoice', id=id, costumer=costumer, date=date, seller=seller,
                                 items=items, total=total, pending=pending))
@@ -129,7 +137,7 @@ def search_invoice():
 @app.route('/invoice/view/select')
 def select_invoice():
     inv = Invoice()
-    return render_template('invoice/select_invoice.html', invoices=inv.get_ten_invoices())
+    return render_template('invoice/select_invoice.html', title='Select Invoice', invoices=inv.get_ten_invoices())
 
 
 @app.route('/invoice/view/print')
@@ -175,10 +183,56 @@ def settings():
 
 @app.route('/settings/admin/create')
 def create_admin():
-    # Check if admin exist
-    # If so, ask for password
-    # If not, create admin
+    admin = Admin()
+    if admin.check_if_admin_exist():
+        if not admin.check_session(SK):
+            return redirect(url_for('login', callback='create_admin'))
     return render_template('settings/create_admin.html')
+
+
+@app.route('/settings/admin/create/process', methods=['POST', 'GET'])
+def create_admin_process():
+    admin = Admin()
+    admin.name = request.form['name']
+    admin.phone = request.form['phone']
+    admin.user_name = request.form['username']
+    admin.password = request.form['password']
+    admin.address = {
+        'street': request.form['street'],
+        'city': request.form['city'],
+        'state': request.form['state'],
+        'zipcode': request.form['zipcode'],
+    }
+    admin.email = request.form['email']
+    admin.join_date = datetime.now()
+
+    if admin.create_admin():
+        return redirect(url_for('create_admin', flash='Administrator created successfully.'))
+    else:
+        raise Exception
+
+
+@app.route('/login')
+def login():
+    return render_template('settings/auth_admin.html')
+
+
+@app.route('/login/auth', methods=['POST', 'GET'])
+def login_auth():
+    admin = Admin()
+    admin.user_name = request.form['username']
+    admin.password = request.form['password']
+    callback = request.form['callback']
+
+    if admin.auth_admin():
+        if callback:
+            # response = make_response(redirect(url_for('home')))
+            # response.set_cookie('session', SK_hash, 500)
+            return admin.create_session('admin_session', callback, SK_hash, 500)
+        else:
+            return redirect(url_for('home'))
+    flash('Username or password incorrect.')
+    return redirect(url_for('login'))
 
 
 @app.errorhandler(404)

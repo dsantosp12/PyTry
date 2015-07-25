@@ -3,6 +3,7 @@ __author__ = 'dsantos'
 from mysql.connector import Connect, errors
 from datetime import datetime
 from flask.ext.bcrypt import Bcrypt
+from flask import make_response, redirect, url_for, request
 
 HOST = '127.0.0.1'
 USER = 'root'
@@ -11,7 +12,7 @@ DATABASE = 'pytry'
 
 
 class Database:
-    """Database model."""
+    """Database model with init method to set the database."""
     def __init__(self):
         pass
 
@@ -519,7 +520,7 @@ class Invoice:
 
         cur = conn.cursor()
 
-        query = ("SELECT * FROM invoices ORDER BY `id` DESC LIMIT 15".format(id))
+        query = ("SELECT * FROM invoices ORDER BY `invoice_id` DESC LIMIT 15".format(id))
         try:
             cur.execute(query)
         except errors.ProgrammingError as e:
@@ -541,7 +542,7 @@ class Invoice:
 
         cur = conn.cursor()
 
-        query = ("SELECT * FROM invoices WHERE `id` = {}".format(self.invoice_id))
+        query = ("SELECT * FROM invoices WHERE `invoice_id` = {}".format(self.invoice_id))
         try:
             cur.execute(query)
         except errors.ProgrammingError as e:
@@ -556,17 +557,47 @@ class Invoice:
 
 
 class Admin:
-    def __init__(self, name, email, user_name, password, phone, join_date, address={}):
-        bcrypt = Bcrypt()
+    def __init__(self, name='', email='', user_name='', password='', phone='', join_date='', address={}):
         self.name = name
         self.email = email
         self.user_name = user_name
-        self.password = bcrypt.generate_password_hash(password)
+        self.password = password
         self.phone = phone
         self.address = address
         self.join_date = join_date
 
-    def create_employee(self):
+    def create_admin(self):
+        if not self.check_duplicate():
+            try:
+                conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+            except ConnectionError as e:
+                print(e)
+                return False
+
+            cur = conn.cursor()
+
+            bcrypt = Bcrypt()
+
+            query = ("INSERT INTO "
+                     "`administrator`(name, user_name, password, street, city, state, zipcode, phone, email, join_date)"
+                     "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')"
+                     "".format(self.name, self.user_name, bcrypt.generate_password_hash(self.password),
+                               self.address['street'], self.address['city'], self.address['state'],
+                               self.address['zipcode'], self.phone, self.email, self.join_date))
+
+            try:
+                cur.execute(query)
+            except errors.ProgrammingError as e:
+                print(e)
+                return False
+
+            conn.commit()
+            conn.close()
+
+            return True
+        return False
+
+    def check_duplicate(self):
         try:
             conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
         except ConnectionError as e:
@@ -575,12 +606,8 @@ class Admin:
 
         cur = conn.cursor()
 
-        query = ("INSERT INTO "
-                 "`administrator`(name, user_name, password, street, city, state, zipcode, phone, email, join_date)"
-                 "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')"
-                 "".format(self.name, self.user_name, self.password, self.address['street'],
-                           self.address['city'], self.address['state'], self.address['zipcode'],
-                           self.phone, self.email, self.join_date))
+        # Check if username exist
+        query = "SELECT * FROM `administrator` WHERE `user_name` = '{}'".format(self.user_name)
 
         try:
             cur.execute(query)
@@ -588,9 +615,129 @@ class Admin:
             print(e)
             return False
 
-        conn.commit()
+        response = cur.fetchall()
+        print(response)
+        # If so, return True
+        if response:
+            conn.close()
+            return True
+
+        # If not, check if email exists
+        query = "SELECT * FROM `administrator` WHERE `email` = '{}'".format(self.email)
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return False
+
+        response = cur.fetchall()
+        print(response)
+        if response:
+            conn.close()
+            return True
+
         conn.close()
 
+        # If not return False
+        return False
+
+    @staticmethod
+    def check_if_admin_exist():
+        """This method is used to verify if at least one administrator has been setup."""
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = "SELECT * FROM `administrator`"
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return False
+
+        conn.close()
+
+        return cur.fetchall()
+
+    def auth_admin(self):
+        """Authenticate administrator trying to login."""
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = "SELECT `password` FROM `administrator` WHERE `user_name` = '{}'".format(self.user_name)
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return False
+
+        response = cur.fetchall()
+
+        conn.close()
+
+        bcrypt = Bcrypt()
+
+        return bcrypt.check_password_hash(response[0][0], self.password)
+
+    @staticmethod
+    def create_session(name, callback, key, time):
+        response = make_response(redirect(url_for(callback)))
+        response.set_cookie(name, key, time)
+        return response
+
+    @staticmethod
+    def check_session(sk):
+        b = Bcrypt()
+        try:
+            return b.check_password_hash(request.cookies['admin_session'], sk)
+        except KeyError as e:
+            return False
+
+
+class Security:
+    def __init__(self, access_code=''):
+        self.access_code = access_code
+
+    def grant_access(self):
+        # TODO : Grant access functionality
+        # try:
+        #     conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        # except ConnectionError as e:
+        #     print(e)
+        #     return False
+        #
+        # cur = conn.cursor()
+        #
+        # query = "SELECT `password` FROM `administrator` WHERE `user_name` = '{}'".format(self.user_name)
+        #
+        # try:
+        #     cur.execute(query)
+        # except errors.ProgrammingError as e:
+        #     print(e)
+        #     return False
+        code = 'supra@ma&ny'
+
+        if self.access_code == code:
+            return True
+        return False
+
 if __name__ == '__main__':
-    db = Database()
-    db.init()
+    # db = Database()
+    # db.init()
+    admin = Admin()
+    admin.user_name = 'dsantos'
+    admin.password = 'Kila@toadsfla$1432'
+
+    print(admin.auth_admin())

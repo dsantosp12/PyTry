@@ -2,6 +2,9 @@
     color: #000;
 }
 
+#login{
+    margin-top: 100px;
+}
 .flash{
     position: absolute;
     max-height: 50px;
@@ -9,7 +12,7 @@
 
 @media print{
     .printable{
-        opacity: .5;
+        opacity: .7;
     }
     .inv-logo{
         margin-left: 150px;

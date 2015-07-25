@@ -13,4 +13,7 @@ $(document).ready(function() {
         selectYears: 2 // Creates a dropdown of 15 years to control year
     });
 
+    $('.collapsible').collapsible({
+        accordion : false
+    });
 });

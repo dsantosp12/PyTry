@@ -3,15 +3,15 @@
     <div class="container">
         <div class="row">
             <h4>Create Administrator</h4>
-            <form method="POST" action="{{ url_for('create_admin') }}">
+            <form method="POST" action="{{ url_for('create_admin_process') }}">
 
                 <div class="row">
-                    <div class="input-field col m6">
+                    <div class="input-field col m6 s6">
                         <input placeholder="Full Name" id="name" type="text" name="name" class="validate">
                         <label for="name">Name</label>
                     </div>
-                    <div class="input-field col m6">
-                        <input placeholder="Phone" id="phone" type="tel" name="text" class="validate">
+                    <div class="input-field col m6 s6">
+                        <input placeholder="Phone" id="phone" type="tel" name="phone" class="validate">
                         <label for="phone">Phone</label>
                     </div>
                 </div>
@@ -27,24 +27,31 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-
-                <div class="input-field">
-                    <input placeholder="Street" id="street" type="text" name="street" class="validate">
-                    <label for="street">Street</label>
+                <div class="row">
+                    <div class="input-field col m12 s6">
+                        <input placeholder="E-mail" id="email" type="email" name="email" class="validate">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="input-field col m12 s6">
+                        <input placeholder="Street" id="street" type="text" name="street" class="validate">
+                        <label for="street">Street</label>
+                    </div>
+                    <div class="input-field col m12 s6">
+                        <input placeholder="City" id="city" type="text" name="city" class="validate">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="input-field col m12 s6">
+                        <input placeholder="Ex. MA, FL" id="state" type="text" name="state" class="validate">
+                        <label for="state">State</label>
+                    </div>
+                    <div class="input-field col m12 s6">
+                        <input placeholder="Zipcode" id="zipcode" type="text" name="zipcode" class="validate">
+                        <label for="zipcode">Zipcode</label>
+                    </div>
+                    <div class="col s12">
+                        <button class="waves-effect waves-light btn green darken-2" type="submit">Create</button>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input placeholder="City" id="city" type="text" name="city" class="validate">
-                    <label for="city">City</label>
-                </div>
-                <div class="input-field">
-                    <input placeholder="Ex. MA, FL" id="state" type="text" name="state" class="validate">
-                    <label for="state">State</label>
-                </div>
-                <div class="input-field">
-                    <input placeholder="Zipcode" id="zipcode" type="text" name="zipcode" class="validate">
-                    <label for="zipcode">Zipcode</label>
-                </div>
-                <button type="submit">Create</button>
             </form>
         </div>
     </div>
@@ -52,6 +59,26 @@
 
 {% block script %}
     <script>
-        alert('asd');
+        $('form').submit(function (evt) {
+            evt.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            $.post(url, formData, function(){
+                new jBox('Notice', {
+                    content: 'Administrator created successfully!'
+                });
+
+                $('form').trigger('reset');
+
+            }).fail(function(jqXHR){
+
+                new jBox('Notice', {
+                    content: 'Administrator was not created. Check the fields or duplicate.'
+                });
+
+            });
+        });
     </script>
 {% endblock %}

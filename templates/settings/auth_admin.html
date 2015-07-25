@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+{% block contents %}
+    <div class="container">
+        <div class="row">
+            <div class="col s10 m6 offset-m3 offset-s1" id="login">
+                <div class="card  z-depth-4">
+                    <div class="card-content grey lighten-4">
+                        <h4 class="center">Login</h4>
+                        <p class="center green-text">Login is required</p>
+                        <form method="POST" action="{{ url_for('login_auth') }}">
+                            <div class="input-field">
+                                <input placeholder="Username" type="text" name="username" id="username" class="validate" autofocus>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input placeholder="Password" type="password" name="password" id="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                            <input type="hidden" name="callback" value="{{ request.args.get('callback') }}">
+                            <button type="submit" class="waves-effect waves-light btn green darken-2">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
