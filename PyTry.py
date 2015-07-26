@@ -131,7 +131,7 @@ def search_invoice():
         return redirect(url_for('print_invoice', id=id, costumer=costumer, date=date, seller=seller,
                                 items=items, total=total, pending=pending))
     else:
-        return redirect(url_for('select_invoice',  nfy="No found"))
+        return redirect(url_for('view_invoice',  nfy="No found"))
 
 
 @app.route('/invoice/view/select')
@@ -164,6 +164,23 @@ def delete_invoice():
 @app.route('/pending')
 def pending():
     return render_template('pending/pending.html', title='Pending')
+
+
+@app.route('/pending/view')
+def view_pending():
+    return render_template('pending/select_pending.html', callback='view_pending', title='View Pending', pending=Invoice.get_pending_invoices())
+
+
+@app.route('/pending/view/change', methods=['POST', 'GET'])
+def change_pending_status():
+    callback = request.form['callback']
+    print(request.form['pending_id'])
+    try:
+        Invoice.change_pending_status(request.form['pending_id'])
+    except Exception as e:
+        print(e)
+        return 'Failed'
+    return redirect(url_for(callback))
 
 
 @app.route('/costumer')

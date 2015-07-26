@@ -14,9 +14,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PyTry$models.coverage" NAME="models Coverage Results" MODIFIED="1437794584722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyTry$models.coverage" NAME="models Coverage Results" MODIFIED="1437898793880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyTry$tools.coverage" NAME="tools Coverage Results" MODIFIED="1437705275250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PyTry$PyTry.coverage" NAME="PyTry Coverage Results" MODIFIED="1437797881434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/PyTry$PyTry.coverage" NAME="PyTry Coverage Results" MODIFIED="1437898776577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -46,38 +46,39 @@
     <favorites_list name="PyTry" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.53800476">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.619802">
+        <splitter split-orientation="vertical" split-proportion="0.6933333">
           <split-first>
             <leaf>
-              <file leaf-file-name="create_admin.html" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/templates/settings/create_admin.html">
+              <file leaf-file-name="select_invoice.html" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/templates/invoice/select_invoice.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.4753521">
-                      <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/static/js/main.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0">
-                      <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+                    <state vertical-scroll-proportion="-15.791667">
+                      <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="62" />
                       <folding>
-                        <element signature="e#0#41#0" expanded="false" />
+                        <element signature="e#3761#3801#0#HTML" expanded="true" />
+                        <element signature="e#4111#4151#0#HTML" expanded="true" />
                       </folding>
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="invoice.html" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/templates/invoice/invoice.html">
+              <file leaf-file-name="select_pending.html" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/templates/pending/select_pending.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-4.375">
-                      <caret line="7" column="28" selection-start-line="3" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
+                    <state vertical-scroll-proportion="0.4396887">
+                      <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/templates/misc/home.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="-6.25">
+                      <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
                       <folding />
                     </state>
                   </provider>
@@ -90,14 +91,16 @@
               <file leaf-file-name="PyTry.py" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/PyTry.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="1.9491526">
-                      <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+                    <state vertical-scroll-proportion="0.13452914">
+                      <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
                       <folding>
                         <element signature="e#0#29#0" expanded="true" />
                         <element signature="e#685#893#0" expanded="false" />
-                        <element signature="e#3647#4301#0" expanded="false" />
-                        <element signature="e#4558#5181#0" expanded="false" />
-                        <element signature="e#6092#6705#0" expanded="false" />
+                        <element signature="e#3647#4299#0" expanded="false" />
+                        <element signature="e#4556#5179#0" expanded="false" />
+                        <element signature="e#6311#6531#0" expanded="false" />
+                        <element signature="e#6636#7249#0" expanded="false" />
+                        <element signature="e#7416#7961#0" expanded="false" />
                       </folding>
                     </state>
                   </provider>
@@ -112,8 +115,8 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5346232">
-                  <caret line="734" column="0" selection-start-line="734" selection-start-column="0" selection-end-line="734" selection-end-column="0" />
+                <state vertical-scroll-proportion="1.2823087">
+                  <caret line="620" column="23" selection-start-line="620" selection-start-column="23" selection-end-line="620" selection-end-column="23" />
                   <folding>
                     <element signature="e#24#67#0" expanded="true" />
                     <element signature="e#283#5704#0" expanded="false" />
@@ -121,54 +124,58 @@
                     <element signature="e#7703#9232#0" expanded="false" />
                     <element signature="e#9255#11356#0" expanded="false" />
                     <element signature="e#11375#12985#0" expanded="false" />
-                    <element signature="e#13007#16323#0" expanded="false" />
-                    <element signature="e#16343#20636#0" expanded="false" />
-                    <element signature="e#16695#17796#0" expanded="false" />
-                    <element signature="e#17837#18933#0" expanded="false" />
-                    <element signature="e#20659#21423#0" expanded="false" />
-                    <marker date="1437799739000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
-                    <marker date="1437799739000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
-                    <marker date="1437799739000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
-                    <marker date="1437799739000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
-                    <marker date="1437799739000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
-                    <marker date="1437799739000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
-                    <marker date="1437799739000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
-                    <marker date="1437799739000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
-                    <marker date="1437799739000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
-                    <marker date="1437799739000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
-                    <marker date="1437799739000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
-                    <marker date="1437799739000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
-                    <marker date="1437799739000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
-                    <marker date="1437799739000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
-                    <marker date="1437799739000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
-                    <marker date="1437799739000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
-                    <marker date="1437799739000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
-                    <marker date="1437799739000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
-                    <marker date="1437799739000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
-                    <marker date="1437799739000" expanded="true" signature="17016:17240" placeholder="INSERT INTO ..." />
-                    <marker date="1437799739000" expanded="true" signature="18093:18122" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="18093:18130" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="18093:18146" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="18093:18147" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="18524:18573" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="18524:18574" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="19305:19334" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="19840:19878" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="19840:19902" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="19840:19903" placeholder="SELECT `pass..administrator..." />
-                    <marker date="1437799739000" expanded="true" signature="21069:21132" placeholder="SELECT `pass..administrator..." />
+                    <element signature="e#13120#13319#0" expanded="false" />
+                    <element signature="e#13359#14054#0" expanded="false" />
+                    <element signature="e#14124#14630#0" expanded="false" />
+                    <element signature="e#14698#15203#0" expanded="false" />
+                    <element signature="e#15259#15769#0" expanded="false" />
+                    <element signature="e#15812#16323#0" expanded="false" />
+                    <element signature="e#16383#16867#0" expanded="false" />
+                    <element signature="e#17969#22262#0" expanded="false" />
+                    <element signature="e#18321#19422#0" expanded="false" />
+                    <element signature="e#19463#20559#0" expanded="false" />
+                    <element signature="e#22285#23049#0" expanded="false" />
+                    <marker date="1437898770000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
+                    <marker date="1437898770000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
+                    <marker date="1437898770000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
+                    <marker date="1437898770000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
+                    <marker date="1437898770000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
+                    <marker date="1437898770000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
+                    <marker date="1437898770000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
+                    <marker date="1437898770000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
+                    <marker date="1437898770000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
+                    <marker date="1437898770000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
+                    <marker date="1437898770000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
+                    <marker date="1437898770000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
+                    <marker date="1437898770000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
+                    <marker date="1437898770000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
+                    <marker date="1437898770000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
+                    <marker date="1437898770000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
+                    <marker date="1437898770000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="16605:16648" placeholder="SELECT * FRO..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="16605:16650" placeholder="SELECT * FRO..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="16605:16651" placeholder="SELECT * FRO..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="17161:17186" placeholder="SELECT `is_p....." />
+                    <marker date="1437898770000" expanded="true" signature="17161:17222" placeholder="SELECT `is_p..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="17161:17242" placeholder="SELECT `is_p..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="17629:17712" placeholder="UPDATE `invo..." />
+                    <marker date="1437898770000" expanded="true" signature="17629:17713" placeholder="SELECT * FRO..invoices..." />
+                    <marker date="1437898770000" expanded="true" signature="18642:18866" placeholder="INSERT INTO ..." />
+                    <marker date="1437898770000" expanded="true" signature="19719:19748" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="19719:19756" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="19719:19772" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="19719:19773" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="20150:20199" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="20150:20200" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="20931:20960" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="21466:21504" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="21466:21528" placeholder="SELECT * FRO..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="21466:21529" placeholder="SELECT `pass..administrator..." />
+                    <marker date="1437898770000" expanded="true" signature="22695:22758" placeholder="SELECT `pass..administrator..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="create_invoice.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/invoice/create_invoice.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -193,25 +200,26 @@
       <list>
         <option value="$PROJECT_DIR$/templates/employees/employees.html" />
         <option value="$PROJECT_DIR$/templates/costumers/costumer.html" />
-        <option value="$PROJECT_DIR$/templates/pending/pending.html" />
         <option value="$PROJECT_DIR$/templates/invoice/create_order.html" />
         <option value="$PROJECT_DIR$/static/js/jbox.js" />
-        <option value="$PROJECT_DIR$/templates/invoice/view.html" />
         <option value="$PROJECT_DIR$/tools.py" />
-        <option value="$PROJECT_DIR$/templates/misc/home.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7e68e6ad-c5fe-46b0-b84d-8d5560f2b186/console.sql" />
         <option value="$PROJECT_DIR$/templates/invoice/invoice.html" />
         <option value="$PROJECT_DIR$/templates/invoice/invoice_print.html" />
         <option value="$PROJECT_DIR$/templates/layout/base.html" />
-        <option value="$PROJECT_DIR$/templates/invoice/select_invoice.html" />
         <option value="$PROJECT_DIR$/templates/invoice/create_invoice.html" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
-        <option value="$PROJECT_DIR$/PyTry.py" />
         <option value="$PROJECT_DIR$/static/js/main.js" />
         <option value="$PROJECT_DIR$/templates/settings/settings.html" />
         <option value="$PROJECT_DIR$/templates/settings/auth_admin.html" />
         <option value="$PROJECT_DIR$/templates/settings/create_admin.html" />
         <option value="$PROJECT_DIR$/models.py" />
+        <option value="$PROJECT_DIR$/templates/invoice/view.html" />
+        <option value="$PROJECT_DIR$/templates/pending/pending.html" />
+        <option value="$PROJECT_DIR$/PyTry.py" />
+        <option value="$PROJECT_DIR$/templates/misc/home.html" />
+        <option value="$PROJECT_DIR$/templates/invoice/select_invoice.html" />
+        <option value="$PROJECT_DIR$/templates/pending/select_pending.html" />
       </list>
     </option>
   </component>
@@ -265,6 +273,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -299,6 +308,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pending" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="misc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,7 +435,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,11 +450,14 @@
     <property name="full.screen.before.presentation.mode" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/pending" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.PyTry">
+  <component name="RunManager" selected="Python.models">
     <configuration default="false" name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -683,25 +730,25 @@
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2920792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24356435" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35148516" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11321748" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35148516" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32673267" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18316832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18316832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -720,9 +767,9 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.111979164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270751" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3241107" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3241107" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -738,11 +785,127 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/settings/create_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/invoice/invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="28" selection-start-line="3" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#685#893#0" expanded="false" />
+            <element signature="e#3647#4299#0" expanded="false" />
+            <element signature="e#4556#5179#0" expanded="false" />
+            <element signature="e#6311#6531#0" expanded="false" />
+            <element signature="e#6636#7249#0" expanded="false" />
+            <element signature="e#7416#7961#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#67#0" expanded="true" />
+            <element signature="e#283#5704#0" expanded="false" />
+            <element signature="e#5727#7680#0" expanded="false" />
+            <element signature="e#7703#9232#0" expanded="false" />
+            <element signature="e#9255#11356#0" expanded="false" />
+            <element signature="e#11375#12985#0" expanded="false" />
+            <element signature="e#13120#13319#0" expanded="false" />
+            <element signature="e#13359#14054#0" expanded="false" />
+            <element signature="e#14124#14630#0" expanded="false" />
+            <element signature="e#14698#15203#0" expanded="false" />
+            <element signature="e#15259#15769#0" expanded="false" />
+            <element signature="e#15812#16323#0" expanded="false" />
+            <element signature="e#16383#16867#0" expanded="false" />
+            <element signature="e#17969#22262#0" expanded="false" />
+            <element signature="e#18321#19422#0" expanded="false" />
+            <element signature="e#19463#20559#0" expanded="false" />
+            <element signature="e#22285#23049#0" expanded="false" />
+            <marker date="1437898770000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
+            <marker date="1437898770000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
+            <marker date="1437898770000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
+            <marker date="1437898770000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
+            <marker date="1437898770000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
+            <marker date="1437898770000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
+            <marker date="1437898770000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
+            <marker date="1437898770000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
+            <marker date="1437898770000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16648" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16650" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16651" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17186" placeholder="SELECT `is_p....." />
+            <marker date="1437898770000" expanded="true" signature="17161:17222" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17242" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17712" placeholder="UPDATE `invo..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17713" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="18642:18866" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19748" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19756" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19772" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19773" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20199" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20200" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20931:20960" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21504" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21528" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21529" placeholder="SELECT `pass..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="22695:22758" placeholder="SELECT `pass..administrator..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/invoice/create_invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/settings/create_admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -774,9 +937,11 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <element signature="e#685#893#0" expanded="false" />
-            <element signature="e#3647#4301#0" expanded="false" />
-            <element signature="e#4558#5181#0" expanded="false" />
-            <element signature="e#6092#6705#0" expanded="false" />
+            <element signature="e#3647#4299#0" expanded="false" />
+            <element signature="e#4556#5179#0" expanded="false" />
+            <element signature="e#6311#6531#0" expanded="false" />
+            <element signature="e#6636#7249#0" expanded="false" />
+            <element signature="e#7416#7961#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -792,43 +957,57 @@
             <element signature="e#7703#9232#0" expanded="false" />
             <element signature="e#9255#11356#0" expanded="false" />
             <element signature="e#11375#12985#0" expanded="false" />
-            <element signature="e#13007#16323#0" expanded="false" />
-            <element signature="e#16343#20636#0" expanded="false" />
-            <element signature="e#16695#17796#0" expanded="false" />
-            <element signature="e#17837#18933#0" expanded="false" />
-            <element signature="e#20659#21423#0" expanded="false" />
-            <marker date="1437799739000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
-            <marker date="1437799739000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
-            <marker date="1437799739000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
-            <marker date="1437799739000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
-            <marker date="1437799739000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
-            <marker date="1437799739000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
-            <marker date="1437799739000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
-            <marker date="1437799739000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
-            <marker date="1437799739000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="17016:17240" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18122" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18130" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18146" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18147" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18524:18573" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18524:18574" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19305:19334" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19878" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19902" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19903" placeholder="SELECT `pass..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="21069:21132" placeholder="SELECT `pass..administrator..." />
+            <element signature="e#13120#13319#0" expanded="false" />
+            <element signature="e#13359#14054#0" expanded="false" />
+            <element signature="e#14124#14630#0" expanded="false" />
+            <element signature="e#14698#15203#0" expanded="false" />
+            <element signature="e#15259#15769#0" expanded="false" />
+            <element signature="e#15812#16323#0" expanded="false" />
+            <element signature="e#16383#16867#0" expanded="false" />
+            <element signature="e#17969#22262#0" expanded="false" />
+            <element signature="e#18321#19422#0" expanded="false" />
+            <element signature="e#19463#20559#0" expanded="false" />
+            <element signature="e#22285#23049#0" expanded="false" />
+            <marker date="1437898770000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
+            <marker date="1437898770000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
+            <marker date="1437898770000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
+            <marker date="1437898770000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
+            <marker date="1437898770000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
+            <marker date="1437898770000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
+            <marker date="1437898770000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
+            <marker date="1437898770000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
+            <marker date="1437898770000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16648" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16650" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16651" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17186" placeholder="SELECT `is_p....." />
+            <marker date="1437898770000" expanded="true" signature="17161:17222" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17242" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17712" placeholder="UPDATE `invo..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17713" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="18642:18866" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19748" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19756" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19772" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19773" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20199" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20200" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20931:20960" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21504" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21528" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21529" placeholder="SELECT `pass..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="22695:22758" placeholder="SELECT `pass..administrator..." />
           </folding>
         </state>
       </provider>
@@ -848,9 +1027,11 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <element signature="e#685#893#0" expanded="false" />
-            <element signature="e#3647#4301#0" expanded="false" />
-            <element signature="e#4558#5181#0" expanded="false" />
-            <element signature="e#6092#6705#0" expanded="false" />
+            <element signature="e#3647#4299#0" expanded="false" />
+            <element signature="e#4556#5179#0" expanded="false" />
+            <element signature="e#6311#6531#0" expanded="false" />
+            <element signature="e#6636#7249#0" expanded="false" />
+            <element signature="e#7416#7961#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,43 +1047,57 @@
             <element signature="e#7703#9232#0" expanded="false" />
             <element signature="e#9255#11356#0" expanded="false" />
             <element signature="e#11375#12985#0" expanded="false" />
-            <element signature="e#13007#16323#0" expanded="false" />
-            <element signature="e#16343#20636#0" expanded="false" />
-            <element signature="e#16695#17796#0" expanded="false" />
-            <element signature="e#17837#18933#0" expanded="false" />
-            <element signature="e#20659#21423#0" expanded="false" />
-            <marker date="1437799739000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
-            <marker date="1437799739000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
-            <marker date="1437799739000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
-            <marker date="1437799739000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
-            <marker date="1437799739000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
-            <marker date="1437799739000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
-            <marker date="1437799739000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
-            <marker date="1437799739000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
-            <marker date="1437799739000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="17016:17240" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18122" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18130" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18146" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18147" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18524:18573" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18524:18574" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19305:19334" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19878" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19902" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19903" placeholder="SELECT `pass..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="21069:21132" placeholder="SELECT `pass..administrator..." />
+            <element signature="e#13120#13319#0" expanded="false" />
+            <element signature="e#13359#14054#0" expanded="false" />
+            <element signature="e#14124#14630#0" expanded="false" />
+            <element signature="e#14698#15203#0" expanded="false" />
+            <element signature="e#15259#15769#0" expanded="false" />
+            <element signature="e#15812#16323#0" expanded="false" />
+            <element signature="e#16383#16867#0" expanded="false" />
+            <element signature="e#17969#22262#0" expanded="false" />
+            <element signature="e#18321#19422#0" expanded="false" />
+            <element signature="e#19463#20559#0" expanded="false" />
+            <element signature="e#22285#23049#0" expanded="false" />
+            <marker date="1437898770000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
+            <marker date="1437898770000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
+            <marker date="1437898770000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
+            <marker date="1437898770000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
+            <marker date="1437898770000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
+            <marker date="1437898770000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
+            <marker date="1437898770000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
+            <marker date="1437898770000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
+            <marker date="1437898770000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16648" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16650" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16651" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17186" placeholder="SELECT `is_p....." />
+            <marker date="1437898770000" expanded="true" signature="17161:17222" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17242" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17712" placeholder="UPDATE `invo..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17713" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="18642:18866" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19748" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19756" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19772" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19773" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20199" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20200" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20931:20960" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21504" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21528" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21529" placeholder="SELECT `pass..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="22695:22758" placeholder="SELECT `pass..administrator..." />
           </folding>
         </state>
       </provider>
@@ -934,14 +1129,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/costumers/costumer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08042896">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pending/pending.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08042896">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
@@ -991,26 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/misc/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding>
-            <element signature="e#343#366#0#HTML" expanded="false" />
-            <element signature="e#453#476#0#HTML" expanded="false" />
-            <element signature="e#535#558#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/invoice/view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12526096">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.14104596">
@@ -1023,22 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5">
           <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/invoice/select_invoice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.416667">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/invoice/create_invoice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1067,14 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/invoice/invoice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="28" selection-start-line="3" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/settings/settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70198673">
@@ -1091,10 +1234,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/settings/create_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4225352">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.5345912">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
@@ -1103,8 +1254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5346232">
-          <caret line="734" column="0" selection-start-line="734" selection-start-column="0" selection-end-line="734" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.2823087">
+          <caret line="620" column="23" selection-start-line="620" selection-start-column="23" selection-end-line="620" selection-end-column="23" />
           <folding>
             <element signature="e#24#67#0" expanded="true" />
             <element signature="e#283#5704#0" expanded="false" />
@@ -1112,65 +1263,132 @@
             <element signature="e#7703#9232#0" expanded="false" />
             <element signature="e#9255#11356#0" expanded="false" />
             <element signature="e#11375#12985#0" expanded="false" />
-            <element signature="e#13007#16323#0" expanded="false" />
-            <element signature="e#16343#20636#0" expanded="false" />
-            <element signature="e#16695#17796#0" expanded="false" />
-            <element signature="e#17837#18933#0" expanded="false" />
-            <element signature="e#20659#21423#0" expanded="false" />
-            <marker date="1437799739000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
-            <marker date="1437799739000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
-            <marker date="1437799739000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
-            <marker date="1437799739000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
-            <marker date="1437799739000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
-            <marker date="1437799739000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
-            <marker date="1437799739000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
-            <marker date="1437799739000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
-            <marker date="1437799739000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
-            <marker date="1437799739000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
-            <marker date="1437799739000" expanded="true" signature="17016:17240" placeholder="INSERT INTO ..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18122" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18130" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18146" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18093:18147" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18524:18573" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="18524:18574" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19305:19334" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19878" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19902" placeholder="SELECT * FRO..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="19840:19903" placeholder="SELECT `pass..administrator..." />
-            <marker date="1437799739000" expanded="true" signature="21069:21132" placeholder="SELECT `pass..administrator..." />
+            <element signature="e#13120#13319#0" expanded="false" />
+            <element signature="e#13359#14054#0" expanded="false" />
+            <element signature="e#14124#14630#0" expanded="false" />
+            <element signature="e#14698#15203#0" expanded="false" />
+            <element signature="e#15259#15769#0" expanded="false" />
+            <element signature="e#15812#16323#0" expanded="false" />
+            <element signature="e#16383#16867#0" expanded="false" />
+            <element signature="e#17969#22262#0" expanded="false" />
+            <element signature="e#18321#19422#0" expanded="false" />
+            <element signature="e#19463#20559#0" expanded="false" />
+            <element signature="e#22285#23049#0" expanded="false" />
+            <marker date="1437898770000" expanded="true" signature="1025:1448" placeholder="CREATE TABLE..business..." />
+            <marker date="1437898770000" expanded="true" signature="1831:2161" placeholder="CREATE TABLE..items..." />
+            <marker date="1437898770000" expanded="true" signature="2548:2920" placeholder="CREATE TABLE..costumers..." />
+            <marker date="1437898770000" expanded="true" signature="3308:3705" placeholder="CREATE TABLE..employees..." />
+            <marker date="1437898770000" expanded="true" signature="4091:4428" placeholder="CREATE TABLE..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="4812:5301" placeholder="CREATE TABLE..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="6241:6397" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="7076:7112" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="8174:8316" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="8981:9018" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="9771:9930" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="10590:10627" placeholder="DELETE FROM ..." />
+            <marker date="1437898770000" expanded="true" signature="11116:11139" placeholder="SELECT * FRO..employees..." />
+            <marker date="1437898770000" expanded="true" signature="11976:12123" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="12748:12767" placeholder="SELECT * FRO..items..." />
+            <marker date="1437898770000" expanded="true" signature="13582:13735" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="14347:14385" placeholder="SELECT `{}` ..items..." />
+            <marker date="1437898770000" expanded="true" signature="14921:14968" placeholder="SELECT `desc..items..." />
+            <marker date="1437898770000" expanded="true" signature="15482:15540" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16035:16081" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16648" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16650" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="16605:16651" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17186" placeholder="SELECT `is_p....." />
+            <marker date="1437898770000" expanded="true" signature="17161:17222" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17161:17242" placeholder="SELECT `is_p..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17712" placeholder="UPDATE `invo..." />
+            <marker date="1437898770000" expanded="true" signature="17629:17713" placeholder="SELECT * FRO..invoices..." />
+            <marker date="1437898770000" expanded="true" signature="18642:18866" placeholder="INSERT INTO ..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19748" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19756" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19772" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="19719:19773" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20199" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20150:20200" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="20931:20960" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21504" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21528" placeholder="SELECT * FRO..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="21466:21529" placeholder="SELECT `pass..administrator..." />
+            <marker date="1437898770000" expanded="true" signature="22695:22758" placeholder="SELECT `pass..administrator..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pending/pending.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34749034">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/invoice/invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4054054">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/invoice/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4054054">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/invoice/create_invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2895753">
+          <caret line="92" column="37" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PyTry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9491526">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.13452914">
+          <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <element signature="e#685#893#0" expanded="false" />
-            <element signature="e#3647#4301#0" expanded="false" />
-            <element signature="e#4558#5181#0" expanded="false" />
-            <element signature="e#6092#6705#0" expanded="false" />
+            <element signature="e#3647#4299#0" expanded="false" />
+            <element signature="e#4556#5179#0" expanded="false" />
+            <element signature="e#6311#6531#0" expanded="false" />
+            <element signature="e#6636#7249#0" expanded="false" />
+            <element signature="e#7416#7961#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/settings/create_admin.html">
+    <entry file="file://$PROJECT_DIR$/templates/misc/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4753521">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/invoice/select_invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.791667">
+          <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="62" />
+          <folding>
+            <element signature="e#3761#3801#0#HTML" expanded="true" />
+            <element signature="e#4111#4151#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pending/select_pending.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4396887">
+          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding />
         </state>
       </provider>

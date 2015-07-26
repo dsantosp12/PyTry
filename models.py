@@ -555,6 +555,71 @@ class Invoice:
 
         return response
 
+    @staticmethod
+    def get_pending_invoices():
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = "SELECT * FROM invoices WHERE `is_pending` = 1"
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return None
+
+        response = cur.fetchall()
+
+        conn.close()
+
+        return response
+
+    @staticmethod
+    def change_pending_status(invoce_num):
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = ("SELECT `is_pending` FROM `invoices` "
+                 "WHERE `invoice_id` = '{}'".format(invoce_num))
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return None
+
+        response = cur.fetchall()
+
+        is_pending = response[0][0]
+
+        new_status = None
+        if is_pending == 1:
+            new_status = 0
+        elif is_pending == 0:
+            new_status = 1
+
+        query = ("UPDATE `invoices` SET `is_pending` = {} "
+                 "WHERE invoice_id = '{}';".format(new_status, invoce_num))
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return None
+
+        conn.commit()
+        conn.close()
+
+        return response
+
 
 class Admin:
     def __init__(self, name='', email='', user_name='', password='', phone='', join_date='', address={}):
@@ -736,8 +801,8 @@ class Security:
 if __name__ == '__main__':
     # db = Database()
     # db.init()
-    admin = Admin()
-    admin.user_name = 'dsantos'
-    admin.password = 'Kila@toadsfla$1432'
-
-    print(admin.auth_admin())
+    # admin = Admin()
+    # admin.user_name = 'dsantos'
+    # admin.password = 'Kila@toadsfla$1432'
+    # print(admin.auth_admin())
+    Invoice.change_pending_status(820411)
