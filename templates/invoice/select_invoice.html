@@ -77,7 +77,9 @@
                                         </div>
                                     </div>
                                 </a>
-                                {% block script %}
+
+                            {% endfor %}
+                            {% block script %}
                                 <script>
                                     $().submit(function(evt){
 {#                                        evt.preventDefault();#}
@@ -95,7 +97,6 @@
                                     });
                                 </script>
                             {% endblock %}
-                            {% endfor %}
 
                         </div>
                     </div>

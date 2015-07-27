@@ -1,11 +1,12 @@
 from datetime import datetime
+from inspect import stack
 
 from flask import Flask, render_template, request, redirect, url_for, flash, make_response
 from flask.ext.bcrypt import Bcrypt
 
 from mysql.connector import errors
 
-from models import Item, Costumer, Business, Invoice, Employee, Admin
+from models import Item, Costumer, Business, Invoice, Employee, Admin, Security
 from tools import prepare_items
 
 app = Flask(__name__)
@@ -14,24 +15,31 @@ b = Bcrypt()
 SK = 'F*CM)@_!($":.@!#$E++)_-_;A"S;'
 SK_hash = b.generate_password_hash(SK)
 app.secret_key = SK
+sec = Security()
 
 
 @app.route('/')
 def home():
-    return render_template('misc/home.html', title='Home')
+    if Security.is_login(SK):
+        return render_template('misc/home.html', title='Home')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/invoice')
 def invoice():
-    return render_template('invoice/invoice.html', title='Invoice')
+    if Security.is_login(SK):
+        return render_template('invoice/invoice.html', title='Invoice')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/invoice/create')
 def create_invoice():
-    item = Item()
-    employee = Employee()
-    return render_template('invoice/create_invoice.html', title='Create Invoice', items=item.get_items(),
-                           employees=employee.get_employees())
+    if Security.is_login(SK):
+        item = Item()
+        employee = Employee()
+        return render_template('invoice/create_invoice.html', title='Create Invoice', items=item.get_items(),
+                               employees=employee.get_employees())
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/invoice/create/process', methods=('POST', 'GET'))
@@ -109,7 +117,9 @@ def create_invoice_process():
 
 @app.route('/invoice/view')
 def view_invoices():
-    return render_template('invoice/view.html', title='View Invoice')
+    if Security.is_login(SK):
+        return render_template('invoice/view.html', title='View Invoice')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/invoice/view/select/search/', methods=['POST', 'GET'])
@@ -136,24 +146,26 @@ def search_invoice():
 
 @app.route('/invoice/view/select')
 def select_invoice():
-    inv = Invoice()
-    return render_template('invoice/select_invoice.html', title='Select Invoice', invoices=inv.get_ten_invoices())
+    if Security.is_login(SK):
+        return render_template('invoice/select_invoice.html', title='Select Invoice', invoices=Invoice.get_ten_invoices())
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/invoice/view/print')
 def print_invoice():
+    if Security.is_login(SK):
+        id = request.args.get('id')
+        costumer = request.args.get('costumer')
+        # CONVERT STRING TO DATETIME AND DATETIME BACK TO A FORMATED STRING
+        date = datetime.strftime(datetime.strptime(request.args.get('date'), '%Y-%m-%d'), '%m/%d/%Y')
+        seller = request.args.get('seller')
+        items = prepare_items(request.args.get('items'))
+        total = request.args.get('total')
+        pending = request.args.get('pending')
 
-    id = request.args.get('id')
-    costumer = request.args.get('costumer')
-    # CONVERT STRING TO DATETIME AND DATETIME BACK TO A FORMATED STRING
-    date = datetime.strftime(datetime.strptime(request.args.get('date'), '%Y-%m-%d'), '%m/%d/%Y')
-    seller = request.args.get('seller')
-    items = prepare_items(request.args.get('items'))
-    total = request.args.get('total')
-    pending = request.args.get('pending')
-
-    return render_template('invoice/invoice_print.html', id=id, costumer=costumer, date=date,
-                           seller=seller, items=items, total=total, pending=pending, title=costumer + ' Invoice')
+        return render_template('invoice/invoice_print.html', id=id, costumer=costumer, date=date,
+                               seller=seller, items=items, total=total, pending=pending, title=costumer + ' Invoice')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/invoice/delete/<id>')
@@ -163,46 +175,57 @@ def delete_invoice():
 
 @app.route('/pending')
 def pending():
-    return render_template('pending/pending.html', title='Pending')
+    if Security.is_login(SK):
+        return render_template('pending/pending.html', title='Pending')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/pending/view')
 def view_pending():
-    return render_template('pending/select_pending.html', callback='view_pending', title='View Pending', pending=Invoice.get_pending_invoices())
+    if Security.is_login(SK):
+        return render_template('pending/select_pending.html', callback='view_pending', title='View Pending', pending=Invoice.get_pending_invoices())
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/pending/view/change', methods=['POST', 'GET'])
 def change_pending_status():
-    callback = request.form['callback']
-    print(request.form['pending_id'])
-    try:
-        Invoice.change_pending_status(request.form['pending_id'])
-    except Exception as e:
-        print(e)
-        return 'Failed'
-    return redirect(url_for(callback))
+    if Security.is_login(SK):
+        callback = request.form['callback']
+        try:
+            Invoice.change_pending_status(request.form['pending_id'])
+        except Exception as e:
+            print(e)
+            return 'Failed'
+        return redirect(url_for(callback))
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/costumer')
 def costumer():
-    return render_template('costumers/costumer.html', title='Costumers')
+    if Security.is_login(SK):
+        return render_template('costumers/costumer.html', title='Costumers')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/employees')
 def employees():
-    return render_template('employees/employees.html', title='Employees')
+    if Security.is_login(SK):
+        return render_template('employees/employees.html', title='Employees')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/settings')
 def settings():
-    return render_template('settings/settings.html', title='Settings')
+    if Security.is_login(SK):
+        return render_template('settings/settings.html', title='Settings')
+    return redirect(url_for('login', callback=stack()[0][3]))
 
 
 @app.route('/settings/admin/create')
 def create_admin():
     admin = Admin()
     if admin.check_if_admin_exist():
-        if not admin.check_session(SK):
+        if not Security.is_login(SK):
             return redirect(url_for('login', callback='create_admin'))
     return render_template('settings/create_admin.html')
 
@@ -231,7 +254,9 @@ def create_admin_process():
 
 @app.route('/login')
 def login():
-    return render_template('settings/auth_admin.html')
+    if not Security.is_login(SK):
+        return render_template('settings/auth_admin.html')
+    return redirect(url_for('home'))
 
 
 @app.route('/login/auth', methods=['POST', 'GET'])
@@ -239,7 +264,11 @@ def login_auth():
     admin = Admin()
     admin.user_name = request.form['username']
     admin.password = request.form['password']
-    callback = request.form['callback']
+    try:
+        callback = request.form['callback']
+    except Exception as e:
+        print(e)
+        callback = None
 
     if admin.auth_admin():
         if callback:
@@ -254,7 +283,7 @@ def login_auth():
 
 @app.errorhandler(404)
 def not_found(e):
-    return "Not found!"
+    return render_template('misc/404.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

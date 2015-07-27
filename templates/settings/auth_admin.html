@@ -1,13 +1,25 @@
-{% extends 'layout/base.html' %}
-
 {% block contents %}
-    <div class="container">
+    <!-- CSS MATERIALIZE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- END CSS MATERIALIZE -->
+    <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col s10 m6 offset-m3 offset-s1" id="login">
                 <div class="card  z-depth-4">
                     <div class="card-content grey lighten-4">
                         <h4 class="center">Login</h4>
-                        <p class="center green-text">Login is required</p>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p class="center red-text">{{ message }}</p>
+                                {% endfor %}
+                            {% else %}
+                                <p class="center green-text">Login is required</p>
+                            {% endif %}
+                        {% endwith %}
+
                         <form method="POST" action="{{ url_for('login_auth') }}">
                             <div class="input-field">
                                 <input placeholder="Username" type="text" name="username" id="username" class="validate" autofocus>
@@ -17,7 +29,7 @@
                                 <input placeholder="Password" type="password" name="password" id="password" class="validate">
                                 <label for="password">Password</label>
                             </div>
-                            <input type="hidden" name="callback" value="{{ request.args.get('callback') }}">
+                            <input type="hidden" name="callback" value="{% if request.args.get('callback') %}{{ request.args.get('callback') }}{% else %}home{% endif %}">
                             <button type="submit" class="waves-effect waves-light btn green darken-2">Login</button>
                         </form>
                     </div>
@@ -25,4 +37,12 @@
             </div>
         </div>
     </div>
+
+    <!-- jQuery & Plugins -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- END jQuery & Plugins -->
+
+    <!-- JS MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <!-- END JS MATERIALIZE -->
 {% endblock %}

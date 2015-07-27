@@ -37,13 +37,18 @@
                                         <div class="col s5 m4 l5">
                                             {{ pending[2] }}
                                         </div>
-                                        <form method="POST" action="{{ url_for('change_pending_status') }}" id="pending_status">
-                                            <div class="col s2 m2 l2 ">
-                                                <input type="hidden" value="{{ pending[1] }}" name="pending_id">
-                                                <button type="submit" class="validate"  id="{{ pending[0] }}"></button>
-                                            </div>
-                                            <input type="hidden" name="callback" value="home">
-                                        </form>
+                                        <div class="col m1 l1">
+                                            <form method="POST" action="{{ url_for('change_pending_status') }}" id="{{ pending[1] }}">
+                                                {% if pending[7] == 1 %}
+                                                    <input type="hidden" value="{{ pending[1] }}" name="pending_id">
+                                                    <button style="border: none;  background: none;" type="submit"><i class="small material-icons ">new_releases</i></button>
+                                                {% else %}
+                                                    <input type="hidden" value="{{ pending[1] }}" name="pending_id">
+                                                    <button style="border: none;  background: none;" type="submit"><i class="small material-icons ">done</i></button>
+                                                {% endif %}
+                                                <input type="hidden" name="callback" value="view_pending">
+                                            </form>
+                                        </div>
                                     </div>
                                 </a>
                             {% endfor %}

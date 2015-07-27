@@ -3,7 +3,7 @@ __author__ = 'dsantos'
 from mysql.connector import Connect, errors
 from datetime import datetime
 from flask.ext.bcrypt import Bcrypt
-from flask import make_response, redirect, url_for, request
+from flask import make_response, redirect, url_for, request, flash
 
 HOST = '127.0.0.1'
 USER = 'root'
@@ -754,7 +754,10 @@ class Admin:
 
         bcrypt = Bcrypt()
 
-        return bcrypt.check_password_hash(response[0][0], self.password)
+        try:
+            return bcrypt.check_password_hash(response[0][0], self.password)
+        except IndexError:
+            return False
 
     @staticmethod
     def create_session(name, callback, key, time):
@@ -762,41 +765,17 @@ class Admin:
         response.set_cookie(name, key, time)
         return response
 
+
+class Security:
+
     @staticmethod
-    def check_session(sk):
+    def is_login(sk):
         b = Bcrypt()
+
         try:
             return b.check_password_hash(request.cookies['admin_session'], sk)
         except KeyError as e:
             return False
-
-
-class Security:
-    def __init__(self, access_code=''):
-        self.access_code = access_code
-
-    def grant_access(self):
-        # TODO : Grant access functionality
-        # try:
-        #     conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
-        # except ConnectionError as e:
-        #     print(e)
-        #     return False
-        #
-        # cur = conn.cursor()
-        #
-        # query = "SELECT `password` FROM `administrator` WHERE `user_name` = '{}'".format(self.user_name)
-        #
-        # try:
-        #     cur.execute(query)
-        # except errors.ProgrammingError as e:
-        #     print(e)
-        #     return False
-        code = 'supra@ma&ny'
-
-        if self.access_code == code:
-            return True
-        return False
 
 if __name__ == '__main__':
     # db = Database()
@@ -805,4 +784,5 @@ if __name__ == '__main__':
     # admin.user_name = 'dsantos'
     # admin.password = 'Kila@toadsfla$1432'
     # print(admin.auth_admin())
-    Invoice.change_pending_status(820411)
+    sec = Security()
+    print(sec.is_login('asdfasdfasdfasd'))
