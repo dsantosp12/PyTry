@@ -316,6 +316,9 @@ class Employee:
                  "".format(self.name, self.address['street'], self.address['city'], self.address['state'],
                            self.address['zipcode'], self.phone, self.email, self.join_date))
 
+        if self.name == "" or self.phone == "" or self.email == "" or self.address == "":
+            raise Exception
+
         try:
             cur.execute(query)
         except errors.ProgrammingError as e:
@@ -324,6 +327,8 @@ class Employee:
 
         conn.commit()
         conn.close()
+
+        return True
 
     @staticmethod
     def erase_employee(id):
@@ -370,6 +375,29 @@ class Employee:
         conn.close()
 
         return response
+
+    def send_email(self, mail, msg, app):
+        with app.app_context():
+
+            msg.subject = "Welcome to NapCorps!"
+            msg.sender = "PyTry Manager <daniel.santos@napcorps.com>"
+            msg.recipients = [self.email]
+            msg.html = """
+                <html>
+                    <head>
+                        <title></title>
+                    </head>
+                    <body>
+                        <p>This is a confirmation email from PyTry. An administrator added you to the employee list.</p>
+                    </body>
+                </html>
+            """
+            try:
+                mail.send(msg)
+            except Exception as e:
+                print(e)
+                raise Exception
+            return 'Success'
 
 
 class Item:

@@ -3,6 +3,7 @@ from inspect import stack
 
 from flask import Flask, render_template, request, redirect, url_for, flash, make_response
 from flask.ext.bcrypt import Bcrypt
+from flask.ext.mail import Mail, Message
 
 from mysql.connector import errors
 
@@ -16,6 +17,15 @@ SK = 'F*CM)@_!($":.@!#$E++)_-_;A"S;'
 SK_hash = b.generate_password_hash(SK)
 app.secret_key = SK
 sec = Security()
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'daniel.santos@napcorps.com'
+app.config["MAIL_PASSWORD"] = 'Kila@topla$1432'
+
+mail = Mail()
+mail.init_app(app)
 
 
 @app.route('/')
@@ -214,6 +224,50 @@ def employees():
     return redirect(url_for('login', callback=stack()[0][3]))
 
 
+@app.route('/employees/manage')
+def manage_employee():
+    pass
+
+
+@app.route('/employees/manage/create')
+def create_employee():
+    if Security.is_login(SK):
+        return render_template('employees/create_employee.html', title="Create Employee")
+    return redirect(url_for('login', callback=stack()[0][3]))
+
+
+@app.route('/employees/manage/create/process', methods=['POST', 'GET'])
+def create_employee_process():
+    employee = Employee()
+
+    employee.name = request.form['name']
+    employee.phone = request.form['phone']
+    employee.email = request.form['email']
+    employee.address = {
+        'street': request.form['street'],
+        'city': request.form['city'],
+        'state': request.form['state'],
+        'zipcode': request.form['zipcode'],
+    }
+
+    if employee.create_employee():
+        msg = Message()
+        employee.send_email(mail, msg, app)
+        return 'Success'
+    else:
+        raise Exception
+
+
+@app.route('/employees/manage/edit')
+def edit_employee():
+    pass
+
+
+@app.route('/employees/manage/delete')
+def delete_employee():
+    pass
+
+
 @app.route('/settings')
 def settings():
     if Security.is_login(SK):
@@ -227,7 +281,7 @@ def create_admin():
     if admin.check_if_admin_exist():
         if not Security.is_login(SK):
             return redirect(url_for('login', callback='create_admin'))
-    return render_template('settings/create_admin.html')
+    return render_template('settings/create_admin.html', title="Create Administrator")
 
 
 @app.route('/settings/admin/create/process', methods=['POST', 'GET'])
