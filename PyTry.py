@@ -151,7 +151,7 @@ def search_invoice():
         return redirect(url_for('print_invoice', id=id, costumer=costumer, date=date, seller=seller,
                                 items=items, total=total, pending=pending))
     else:
-        return redirect(url_for('view_invoice',  nfy="No found"))
+        return redirect(url_for('select_invoice',  nfy="No found"))
 
 
 @app.route('/invoice/view/select')
@@ -174,7 +174,7 @@ def print_invoice():
         pending = request.args.get('pending')
 
         return render_template('invoice/invoice_print.html', id=id, costumer=costumer, date=date,
-                               seller=seller, items=items, total=total, pending=pending, title=costumer + ' Invoice')
+                               seller=seller, items=items, total=total, pending=pending, title=costumer + ' - Invoice')
     return redirect(url_for('login', callback=stack()[0][3]))
 
 
@@ -340,4 +340,4 @@ def not_found(e):
     return render_template('misc/404.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
