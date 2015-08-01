@@ -5,10 +5,10 @@ from datetime import datetime
 from flask.ext.bcrypt import Bcrypt
 from flask import make_response, redirect, url_for, request, flash
 
-HOST = '127.0.0.1'
-USER = 'root'
-PASSWORD = ''
-DATABASE = 'pytry'
+HOST = 'us-cdbr-iron-east-02.cleardb.net'
+USER = 'b40c9dc05ad587'
+PASSWORD = 'cc61f936'
+DATABASE = 'heroku_a7fad87285a8099'
 
 
 class Database:

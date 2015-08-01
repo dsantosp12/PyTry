@@ -1,6 +1,11 @@
 Flask==0.10.1
+Flask-Bcrypt==0.6.2
+Flask-Mail==0.9.1
 Jinja2==2.7.3
 MarkupSafe==0.23
 Werkzeug==0.10.4
+blinker==1.4
+gunicorn==19.3.0
 itsdangerous==0.24
 mysql-connector-python==2.0.4
+python-bcrypt==0.3.1
