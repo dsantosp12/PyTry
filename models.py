@@ -794,16 +794,41 @@ class Admin:
         return response
 
 
-class Security:
+class Security(Admin):
 
     @staticmethod
     def is_login(sk):
-        b = Bcrypt()
+        """This method is used to verify if at least one administrator has been setup."""
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = "SELECT * FROM `administrator`"
 
         try:
-            return b.check_password_hash(request.cookies['admin_session'], sk)
-        except KeyError as e:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
             return False
+
+        conn.close()
+
+        response = cur.fetchall()
+
+        if response:
+            b = Bcrypt()
+
+            try:
+                return b.check_password_hash(request.cookies['admin_session'], sk)
+            except KeyError as e:
+                return False
+        else:
+            return True
+
 
 if __name__ == '__main__':
     # db = Database()
