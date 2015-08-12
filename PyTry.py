@@ -157,7 +157,8 @@ def search_invoice():
 @app.route('/invoice/view/select')
 def select_invoice():
     if Security.is_login(SK):
-        return render_template('invoice/select_invoice.html', title='Select Invoice', invoices=Invoice.get_ten_invoices())
+        return render_template('invoice/select_invoice.html', title='Select Invoice',
+                               invoices=Invoice.get_ten_invoices(), boxes_sold=Invoice.number_of_boxes_sold())
     return redirect(url_for('login', callback=stack()[0][3]))
 
 
@@ -178,10 +179,27 @@ def print_invoice():
     return redirect(url_for('login', callback=stack()[0][3]))
 
 
-@app.route('/invoice/delete/<id>')
+@app.route('/invoice/delete/', methods=['POST', 'GET'])
 def delete_invoice():
-    pass
+    invoice = request.form['invoice-1']
+    vali_invoice = request.form['invoice-2']
+    if invoice == '' or vali_invoice == '':
+        flash("Please complete all the fields.")
+        return redirect(url_for('settings'))
 
+    if invoice == vali_invoice:
+        inv = Invoice()
+        inv.invoice_id = invoice
+
+        if inv.delete_invoice():
+            flash("Invoice deleted successfully.")
+            return redirect(url_for('settings'))
+        else:
+            flash("ERROR.")
+            return redirect(url_for('settings'))
+    else:
+        flash("Invoice number didn't match.")
+        return redirect(url_for('settings'))
 
 @app.route('/pending')
 def pending():

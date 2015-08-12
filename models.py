@@ -1,4 +1,5 @@
 __author__ = 'dsantos'
+import re
 
 from mysql.connector import Connect, errors
 from datetime import datetime
@@ -492,6 +493,28 @@ class Invoice:
 
         return True
 
+    def delete_invoice(self):
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = "DELETE FROM `invoices` WHERE `invoice_id` = '{}'".format(self.invoice_id)
+
+        try:
+            cur.execute(query)
+        except errors.ProgrammingError as e:
+            print(e)
+            return False
+
+        conn.commit()
+        conn.close()
+
+        return True
+
     @staticmethod
     def get_price_category(id, category):
         try:
@@ -647,6 +670,35 @@ class Invoice:
         conn.close()
 
         return response
+
+    @staticmethod
+    def number_of_boxes_sold():
+        try:
+            conn = Connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+        except ConnectionError as e:
+            print(e)
+            return False
+
+        cur = conn.cursor()
+
+        query = "SELECT `items` FROM `invoices`"
+
+        cur.execute(query)
+
+        response = cur.fetchall()
+
+        num_of_boxes = 0
+        t = []
+        for invoice in response:
+            for items in invoice:
+                if 'Box' in items:
+                    t.append(items.split(')('))
+
+        for x in t:
+            for i in x:
+                num_of_boxes += int(i.replace('(', '')[0])
+
+        return num_of_boxes
 
 
 class Admin:
@@ -837,5 +889,7 @@ if __name__ == '__main__':
     # admin.user_name = 'dsantos'
     # admin.password = 'Kila@toadsfla$1432'
     # print(admin.auth_admin())
-    sec = Security()
-    print(sec.is_login('asdfasdfasdfasd'))
+    # sec = Security()
+    # print(sec.is_login('asdfasdfasdfasd'))
+    inv = Invoice()
+    inv.number_of_boxes_sold()

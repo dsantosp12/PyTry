@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="323076990">
-    <data-source source="LOCAL" name="MySQL - pytry@localhost" uuid="7e68e6ad-c5fe-46b0-b84d-8d5560f2b186">
+  <component name="DataSourceManagerImpl" format="xml" hash="4082024785">
+    <data-source source="LOCAL" name="MySQL - heroku_a7fad87285a8099@us-cdbr-iron-east-02.cleardb.net" uuid="576a90be-4dea-4257-a7ee-38104dce559c">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/pytry</jdbc-url>
+      <jdbc-url>jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/heroku_a7fad87285a8099</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
